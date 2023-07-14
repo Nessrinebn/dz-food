@@ -4,6 +4,7 @@
     display: block;
   }
   #close-menu-btn {
+    display: inline;
     right: 50px;
     text-align: right;
   }
@@ -48,6 +49,7 @@
   }
 
   .home p {
+    padding: 0 20px;
     font-size: 1.4rem;
   }
 
@@ -95,7 +97,6 @@
   }
 
   .reserv-card img {
-    height: 320px;
     width: 100%;
   }
 
@@ -141,8 +142,8 @@
 
   /*footer*/
   footer img {
-    margin: 5px 0;
-    height: 80px;
+    margin: 10px 0;
+    width: 40%;
   }
 
   footer section {
@@ -162,10 +163,10 @@
 
   .openings {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     justify-content: space-around;
-    text-align: left;
+    text-align: center;
   }
 
   footer h1 {
@@ -252,11 +253,9 @@
   }
   .reserv-card {
     width: 80%;
-    height: 320px;
   }
 
   .reserv-card img {
-    height: 320px;
     width: 100%;
   }
   form select,
@@ -385,11 +384,9 @@
   }
   .reserv-card {
     width: 80%;
-    height: 350px;
   }
 
   .reserv-card img {
-    height: 350px;
     width: 100%;
   }
   form select,
@@ -476,11 +473,9 @@
   }
   .reserv-card {
     width: 80%;
-    height: 450px;
   }
 
   .reserv-card img {
-    height: 450px;
     width: 100%;
   }
   form select,
@@ -542,11 +537,9 @@
   }
   .reserv-card {
     width: 80%;
-    height: 500px;
   }
 
   .reserv-card img {
-    height: 500px;
     width: 100%;
   }
 }

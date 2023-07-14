@@ -18,7 +18,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
-  padding: 2%;
+  padding: 5%;
 }
 
 .logo img {
@@ -40,6 +40,10 @@ body {
 
 .navbar a:hover {
   color: #f2d72b;
+}
+
+#close-menu-btn {
+  display: none;
 }
 
 .icons {
@@ -361,9 +365,8 @@ footer {
 }
 
 footer img {
-  margin: 20% 10%;
+  margin: 20px 10%;
   width: 300px;
-  height: 150px;
   object-position: center;
 }
 
@@ -412,4 +415,8 @@ footer li {
 .fa-twitter {
   background: #3f9acb;
   color: white;
+}
+
+.cp-text {
+  padding: 15px 0;
 }
