@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/iconl.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="script.js" defer></script>
+    <script src="cart.js" defer></script>
+    <title>Dz Food</title>
+</head>
+<body>
+    <header class="header">
+     <div class="logo"><img src="assets/logo.png" alt="dz food log"></div>
+        <nav class="navbar">
+            <a href="#" id="close-menu-btn">&times;</a>
+            <a href="#home">Home</a>
+            <a href="pages/about.html">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#reservation">Reservation</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-search" id="search-btn"></a>
+            <a href="#" class="fas fa-shopping-cart" id="cart-btn"></a>
+            <a href="#" class="fas fa-bars" id="menu-btn"></a>
+        </div>
+        <div class="search-form">
+          <input type="search"  id="search-box" placeholder="search here..">
+          <label for="search-box" class="fas fa-search"></label>
+        </div>
+        <!--
+          <div class="cart-shop">
+            <div class="cart-shop-items">
+              <div id="orders-list"></div>
+            </div>
+          </div>
+        
+        -->
+    </header>
+    <section></section>
+    <main>
+        <section class="home">
+            <h1>Discover the richness of Algerian cuisine</h1>
+            <p>At Dz Food, you will be able to find incredible North-African specialties, <br><br/>and bring together the most delicious flavors from Algeria.</p>
+            <button class="order-btn">Order now</button>
+        </section>
+        <section class="about">
+           <div class="about-text">
+            <h1>About us</h1>
+            <p>Dz Food is one of the first original Algerian restaurants in Netherlands. The restaurant is furnished with cozy low couches and large decorative ornate pillows. The rooms are softened by tapestries covering the walls and ceilings. This decor creates an atmosphere of comfort and leisure.
+                The meal is a 5 course feast served with fresh home baked bread. This is more than just a meal; you can give over an entire evening to this relaxed and unique dining experience.</p>
+           </div>
+                <img src="assets/back.jpg" alt="">
+        </section>
+        <section class="menu">
+            <h1>Our menu</h1>
+            <div class="wrapper">
+                <i id="left" class="fa-solid fa-angle-left"></i>
+            <div class="carousel">
+                <div class="card" >
+                    <img src="assets/rechta.jpg" alt="" draggable="false">
+                    <h1>
+                        Rechta
+                    </h1>
+                    <h2>20€</h2>
+                    <button class="order-btn">Order </button>
+                </div>
+                <div class="card" >
+                    <img  src="assets/mthawem.jpg" alt="" draggable="false">
+                    <h1>
+                        Mthawem
+                    </h1>
+                    <h2>30€</h2>
+                    <button class="order-btn">Order </button>
+                </div>
+                <div class="card" >
+                    <img  src="assets/food-arab-restaurant.jpg" alt="" draggable="false">
+                    <h1>
+                      Couscous
+                    </h1>
+                    <h2>25€</h2>
+                    <button class="order-btn"> Order </button>
+                </div>
+                <div class="card" >
+                        <img  src="assets/hrira.jpg" alt="" draggable="false">
+                        <h1>
+                           Hrira
+                        </h1>
+                        <h2>15€</h3>
+                        <button class="order-btn">Order</button>
+                </div>
+                <div class="card" >
+                    <img  src="assets/hmis.jpg" alt="" draggable="false">
+                    <h1>
+                      Hmiss
+                    </h1>
+                    <h2>10€</h2>
+                  <button class="order-btn"> Order</button>
+                </div>
+                <div class="card" >
+                    <img  src="assets/baghrir.jpg" alt="" draggable="false">
+                    <h1>
+                     Baghrir
+                    </h1>
+                    <h2>12€</h2>
+                  <button class="order-btn"> Order</button>
+                </div>
+                <div class="card" >
+                    <img  src="assets/lbraj.jpg" alt="" draggable="false">
+                    <h1>
+                      Lbraj
+                    </h1>
+                    <h2>5€</h2>
+                  <button class="order-btn"> Order</button>
+           </div>
+           <div class="card" >
+            <img  src="assets/magroud.jpg" alt="" draggable="false">
+            <h1>
+              Magroud
+            </h1>
+             <div></div>
+            <h2>5€</h2>
+          <button class="order-btn"> Order ></button>
+          </div>
+             </div>
+             <i id="right" class="fa-solid fa-angle-right"></i>
+            </div>
+        </section>
+      <section class="reservation">
+        <h1>Reserve a table</h1>
+        <section class="reserv-card">
+            <img src="assets/res.jpg" alt="">
+            <form action="">
+                <div class="form-row">
+                    <input type="text" id="name" placeholder="Your Name">
+                    <input type="email" id="email" placeholder="Your email">
+                  </div>
+              <div class="form-row">
+                <input type="tel" id="phone" placeholder="Your phone number">
+                <input type="number" id="number" placeholder="How many person">
+              </div>
+                <div class="form-row">
+                    <input type="date" id="date" placeholder="Choose a date" >
+                  <select name="time" id="time">
+                        <option value = "hour-select">Select Hour</option>
+                        <option value="">17:00</option>
+                        <option value="">18:00</option>
+                        <option value="">19:00</option>
+                        <option value="">20:00</option>
+                        <option value="">21:00</option> 
+                    </select>
+                </div>
+               <input type="submit">
+            </form>
+        </section>
+      </section>
+    </main>
+    <footer>
+        <section>
+          <div class="footer-img">
+            <img src="assets/logo2.png"></img>
+          </div>
+          <div class="navigation">
+            <h1>Open day</h1>
+            <div class="openings">
+              <ul>
+                <li>Monday     12:00-22:30</li>
+                <li>Tuesday    12:00-22:30</li>
+                <li>Wednesday  12:00-22:30</li>
+            </ul>
+            <ul>
+                <li>Thursday   12:00-22:30</li>
+                <li>Friday     12:00-23:30</li>
+                <li>Saturday   12:00-23:30</li>
+            </ul> </div>
+          </div>
+          <div class="contact">
+            <h1>Info</h1>
+             <ul>
+              <li>Amseterdam, Netherland</li>
+              <li>(123)-456-7890</li>
+              <li>info@dzFood.com</li>
+            </ul>
+          </div>
+          <div class="sociale">
+            <h1>Sociale Media</h1>
+            <div>
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-instagram"></a>
+            </div>
+          </div>
+        </section>
+        <p class="cp-text">
+          © Copyright 2023 Nessrine. All rights reserved.
+      </p>
+      </footer>
+</body>
+</html>

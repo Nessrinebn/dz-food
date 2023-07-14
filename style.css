@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,600&display=swap");
+
+* {
+  font-family: "Crimson Text", serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: #171010;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 2%;
+}
+
+.logo img {
+  width: 200px;
+  height: 80px;
+}
+
+/*Nav bar*/
+.navbar {
+  z-index: 100;
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  font-size: 2rem;
+  padding: 0 30px;
+}
+
+.navbar a:hover {
+  color: #f2d72b;
+}
+
+.icons {
+  margin-left: 4%;
+  display: flex;
+  grid-column-gap: 30px;
+}
+
+.icons a {
+  color: #f2d72b;
+
+  font-size: 1.8rem;
+}
+#menu-btn {
+  display: none;
+}
+.search-form {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  background-color: #fff;
+  width: 50%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.search-form.active {
+  transform: scaleY(1);
+}
+.search-form input {
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+}
+.search-form label {
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+.cart-shop {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  background-color: #fff;
+  width: 200px;
+  height: 200px;
+  color: white;
+  padding: 10px;
+}
+.cart-shop.active {
+  right: 0;
+}
+.cart-items {
+  position: relative;
+  margin: 5px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+/* Home */
+.home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("assets/123.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 500px;
+
+  padding: auto;
+  grid-row: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.home h1 {
+  padding-top: 5%;
+  color: #f2d72b;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.home p {
+  margin-top: 2%;
+  color: #fff;
+  font-size: 2rem;
+}
+
+button {
+  background: transparent;
+  border: 3px solid #f2d72b;
+  box-sizing: border-box;
+  color: #f2d72b;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  margin-top: 2%;
+}
+
+button:hover,
+button:active {
+  background-color: #f2d72b;
+  background-position: 0 0;
+  color: #fff;
+}
+
+button:active {
+  opacity: 0.5;
+}
+/* About*/
+.about {
+  display: flex;
+  margin: 10%;
+  border: 3px solid yellow;
+  padding: 2%;
+}
+
+.about-text h1 {
+  color: #f2d72b;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.about-text p {
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.about img {
+  width: 50%;
+  height: 400px;
+}
+
+/*Menu*/
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu h1 {
+  color: #f2d72b;
+  font-size: 4rem;
+  font-weight: 500;
+}
+.wrapper {
+  margin-top: 5%;
+  padding: 0 10px;
+  width: 80%;
+  position: relative;
+}
+
+.wrapper i {
+  height: 50px;
+  width: 50px;
+  background-color: #f2d72b;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+.wrapper i:first-child {
+  left: -22px;
+}
+
+.wrapper i:last-child {
+  right: -22px;
+}
+
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 5));
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 400px;
+  background: rgb(255, 217, 61, 0.8);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+  cursor: pointer;
+  user-select: none;
+  padding: 0;
+}
+
+.carousel.dragging {
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card h1 {
+  font-size: 2.5rem;
+  color: #171010;
+  font-weight: 900;
+}
+
+.card h2 {
+  margin-top: 10px;
+  font-size: 2rem;
+  color: #171010;
+}
+.card button {
+  background-color: #171010;
+  color: #f2d72b;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+}
+
+/* Reservation */
+.reservation {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reservation h1 {
+  text-align: center;
+  color: #f2d72b;
+  padding: 25px 0 10px 0;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.reserv-card {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background: transparent;
+  border: 3px solid #f2d72b;
+  color: #f2d72b;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.reserv-card img {
+  height: 450px;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  width: 100%;
+}
+
+form select,
+form input {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 5% 5%;
+  font-size: 1.4rem;
+  background-color: #f2d72b;
+  outline: none;
+  padding-left: 20px;
+  border: none;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form input[type="tel"],
+form input::placeholder,
+select {
+  color: #171010;
+}
+
+form input[type="submit"] {
+  color: #000;
+  background: #f2d72b;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  background-color: rgb(255, 217, 61, 0.8);
+  text-align: center;
+  height: 20%;
+  margin-top: 10%;
+}
+
+footer img {
+  margin: 20% 10%;
+  width: 300px;
+  height: 150px;
+  object-position: center;
+}
+
+footer section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  column-gap: 30px;
+}
+
+footer h1 {
+  font-size: 2rem;
+}
+footer li {
+  list-style-type: none;
+  margin-right: -4px;
+  padding: 5%;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.sociale a {
+  display: grid;
+  grid-row: auto;
+  margin-top: 2%;
+  margin-left: 30%;
+  padding: 5%;
+  font-size: 25px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-instagram {
+  background: #f26b17;
+  color: white;
+}
+
+.fa-twitter {
+  background: #3f9acb;
+  color: white;
+}
