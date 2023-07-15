@@ -6,15 +6,6 @@ button.addEventListener("click", () => {
 const menuCloseBtn = document.getElementById("close-menu-btn");
 menuCloseBtn.addEventListener("click", () => nav.classList.toggle("show"));
 
-let searchBox = document.querySelector(".search-form");
-document.querySelector("#search-btn").onclick = () => {
-  searchBox.classList.toggle("active");
-};
-let cartItem = document.querySelector(".cart-shop");
-document.querySelector("#cart-btn").onclick = () => {
-  cartItem.classList.toggle("active");
-};
-
 const carousel = document.querySelector(".carousel");
 const arrowBtns = document.querySelectorAll(".wrapper i");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;

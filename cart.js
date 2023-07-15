@@ -5,14 +5,31 @@ class Cart {
       orderBtn.addEventListener("click", this.handleOnClickOrderBtn)
     );
 
-    document.getElementById("orders-count").innerText = this.getOrdersCount();
+    document.getElementById("cart-btn").onclick = () => this.setOrdersList();
+    this.updateOrdersBadgeCount();
+  }
 
-    const ordersListHTML = this.getOrders().map((order) => {
-      return `
-            <div>${order.dishName}</div>
-        `;
-    });
-    document.getElementById("orders-list").innerHTML = ordersListHTML;
+  setOrdersList() {
+    const ordersListHTML = this.getOrders().reduce((carry, order) => {
+      return (
+        carry +
+        `<li>${order.dishName} (${order.price}€) <span class="remove-order" data-dish-name="${order.dishName}">&times;</span></li>`
+      );
+    }, "");
+    const ordersList = document.getElementById("orders-list");
+    ordersList.innerHTML = ordersListHTML;
+    ordersList.classList.toggle("show");
+
+    const orderRemoveBtns = [
+      ...document.getElementsByClassName("remove-order"),
+    ];
+    orderRemoveBtns.forEach((orderRemoveBtn) =>
+      orderRemoveBtn.addEventListener("click", (e) => {
+        this.removeOrderFromCart(e.target.dataset.dishName);
+        this.setOrdersList();
+        ordersList.classList.toggle("show");
+      })
+    );
   }
 
   handleOnClickOrderBtn = (event) => {
@@ -35,7 +52,25 @@ class Cart {
     ) {
       currentOrders.push(order);
       localStorage.setItem("order", JSON.stringify(currentOrders));
+      this.updateOrdersBadgeCount();
     }
+    this.setOrdersList();
+  }
+
+  removeOrderFromCart(dishName) {
+    const currentOrders = this.getOrders();
+    const indexOrderToRemove = currentOrders.findIndex(
+      (e) => e.dishName === dishName
+    );
+    if (indexOrderToRemove > -1) {
+      currentOrders.splice(indexOrderToRemove, 1);
+      localStorage.setItem("order", JSON.stringify(currentOrders));
+      this.updateOrdersBadgeCount();
+    }
+  }
+
+  updateOrdersBadgeCount() {
+    document.getElementById("orders-badge").innerText = this.getOrdersCount();
   }
 
   getOrders() {
@@ -46,17 +81,6 @@ class Cart {
   getOrdersCount() {
     const currentOrders = this.getOrders();
     return currentOrders.length;
-  }
-
-  removeOrderFromCart(order) {
-    const currentOrders = this.getOrders();
-    const indexOrderToRemove = currentOrders.findIndex(
-      (e) => e.dishName === order.dishName
-    );
-    if (indexOrderToRemove > -1) {
-      currentOrders.splice(indexOrderToRemove, 1);
-      localStorage.setItem("order", JSON.stringify(currentOrders));
-    }
   }
 }
 

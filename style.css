@@ -8,17 +8,25 @@
 }
 
 body {
-  background-color: #171010;
   overflow-x: hidden;
+  background-color: black;
+}
+
+main {
+  margin-top: 60px;
 }
 
 /* Header */
 .header {
   display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
-  background-color: transparent;
-  padding: 5%;
+  justify-content: space-around;
+  background-color: black;
+  padding: 10px;
+  z-index: 200;
 }
 
 .logo img {
@@ -84,6 +92,53 @@ body {
   cursor: pointer;
   margin-right: 1.5rem;
 }
+
+#cart-btn {
+  cursor: pointer;
+}
+
+#orders-list {
+  display: none;
+}
+
+#orders-list.show {
+  display: block;
+  position: absolute;
+  right: 100px;
+  top: 80px;
+  width: 260px;
+  background-color: #f2d72b;
+  text-align: center;
+  box-shadow: -8px 6px 22px -14px rgba(0, 0, 0, 0.75);
+}
+#orders-list li {
+  border-bottom: 1px solid #000;
+  margin: 20px auto;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.6rem;
+  list-style: none;
+}
+
+#orders-badge {
+  position: absolute;
+  top: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  padding: 1px 10px 0 10px;
+  background-color: #ff9422;
+  border-radius: 500px;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  transition: transform 0.15s, background-color 0.5s;
+}
+
 .cart-shop {
   position: absolute;
   top: 100%;
@@ -107,7 +162,7 @@ body {
 /* Home */
 .home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("assets/123.jpg");
+    url("https://github.com/Nessrinebn/dz-food/blob/master/assets/123.jpg?raw=true");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -165,18 +220,19 @@ button:active {
 
 .about-text h1 {
   color: #f2d72b;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bolder;
 }
 
 .about-text p {
+  padding: 10px;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .about img {
   width: 50%;
-  height: 400px;
+  height: 300px;
 }
 
 /*Menu*/
@@ -317,17 +373,18 @@ button:active {
   width: 100%;
 }
 
-.form-row {
+form {
   display: flex;
-  width: 100%;
+  flex-direction: column;
 }
 
 form select,
 form input {
   display: block;
-  width: 200px;
+  width: 80%;
   height: 50px;
-  margin: 5% 5%;
+  margin: 10px 30px;
+  margin: 10px 30px;
   font-size: 1.4rem;
   background-color: #f2d72b;
   outline: none;
@@ -335,6 +392,7 @@ form input {
   border: none;
   opacity: 0.7;
   border-radius: 10px;
+  flex-direction: column;
 }
 
 form input[type="text"],
@@ -381,12 +439,19 @@ footer h1 {
   font-size: 2rem;
 }
 footer li {
+  padding: 10px;
   list-style-type: none;
-  margin-right: -4px;
-  padding: 5%;
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
+}
+
+.openings {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  text-align: center;
 }
 
 .sociale a {
@@ -419,4 +484,549 @@ footer li {
 
 .cp-text {
   padding: 15px 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #menu-btn {
+    display: block;
+  }
+  #close-menu-btn {
+    display: inline;
+    right: 50px;
+    text-align: right;
+  }
+  .navbar {
+    display: none;
+  }
+
+  .navbar.show {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    text-align: left;
+    background-color: white;
+    padding-top: 40px;
+  }
+
+  .navbar a {
+    width: 80%;
+    color: #000;
+    margin-bottom: 30px;
+  }
+
+  #menu-btn {
+    display: block;
+  }
+  .logo img {
+    width: 150px;
+    height: 40px;
+  }
+  /* Home */
+  .home {
+    width: 100%;
+    height: 330px;
+  }
+
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    padding: 0 20px;
+    font-size: 1.4rem;
+  }
+
+  button {
+    font-size: 1.4rem;
+    width: 150px;
+    height: 40px;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-text h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .about-text p {
+    color: #fff;
+    font-size: 1.4rem;
+  }
+
+  .about img {
+    margin: auto;
+    width: 96%;
+    margin-top: 30px;
+  }
+  .menu h1 {
+    font-size: 2.2rem;
+  }
+  .reservation h1 {
+    font-size: 2.2rem;
+  }
+  .reserv-card {
+    display: block;
+    background: transparent;
+    border: 3px solid #f2d72b;
+    color: #f2d72b;
+
+    margin: 5% 2% 5% 2%;
+  }
+
+  .reserv-card img {
+    width: 100%;
+  }
+
+  form input[type="submit"] {
+    width: 90%;
+  }
+
+  /* Menu */
+  .wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+  .wrapper .carousel {
+    width: 80%;
+    grid-auto-columns: calc((100%));
+  }
+  .carousel .card {
+    height: 330px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .card h1 {
+    font-size: 1.8rem;
+    color: #171010;
+    font-weight: 900;
+  }
+
+  .card h2 {
+    margin-top: 5px;
+    font-size: 1.4rem;
+  }
+  .card button {
+    background-color: #171010;
+    color: #f2d72b;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+  }
+
+  /*footer*/
+  footer img {
+    margin: 10px 0;
+    width: 40%;
+  }
+
+  footer section {
+    display: block;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  form input {
+    width: 85%;
+  }
+  form select {
+    width: 90%;
+  }
+
+  .openings {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  footer h1 {
+    font-size: 1.6rem;
+  }
+  footer li {
+    margin: 10px;
+    font-size: 1.2rem;
+    padding: 5px 5px 0 5px;
+  }
+
+  footer > section > div {
+    margin-top: 20px;
+  }
+
+  .sociale > div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .sociale a {
+    font-size: 20px;
+    width: 20px;
+    margin: 20px 0;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .logo img {
+    width: 100px;
+    height: 40px;
+  }
+  .navbar a {
+    padding: 0 10px;
+    font-size: 1.4rem;
+  }
+  .icons {
+    display: flex;
+    grid-column-gap: 10px;
+  }
+
+  .icons a {
+    font-size: 1.2rem;
+  }
+
+  /* Home */
+  .home {
+    width: 100%;
+    height: 300px;
+  }
+
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .home p {
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 1.4rem;
+    width: 150px;
+    height: 50px;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-text p {
+    color: #fff;
+    font-size: 1.8rem;
+  }
+
+  .about img {
+    width: 100%;
+    height: 350px;
+  }
+  .menu h1 {
+    font-size: 2.5rem;
+  }
+  .reservation h1 {
+    font-size: 2.5rem;
+  }
+  .reserv-card {
+    width: 80%;
+  }
+
+  .reserv-card img {
+    width: 100%;
+  }
+  form select,
+  form input {
+    width: 80%;
+    height: 50px;
+    margin: 10px 10px;
+    font-size: 1.2rem;
+  }
+  form input[type="submit"] {
+    font-size: 1.2rem;
+  }
+  /* Menu */
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 3));
+  }
+  .carousel .card {
+    height: 300px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .card h1 {
+    font-size: 1.8rem;
+    color: #171010;
+    font-weight: 900;
+  }
+
+  .card h2 {
+    margin-top: 5px;
+    font-size: 1.4rem;
+  }
+  .card button {
+    background-color: #171010;
+    color: #f2d72b;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+  }
+
+  /*footer*/
+  footer img {
+    width: 80%;
+  }
+
+  footer section {
+    column-gap: 5px;
+  }
+
+  footer h1 {
+    font-size: 1.8rem;
+  }
+  footer li {
+    font-size: 1rem;
+    margin-right: -4px;
+    padding: 5px 5px 0 5px;
+  }
+
+  .sociale a {
+    font-size: 20px;
+    width: 20px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .navbar a {
+    font-size: 1.7rem;
+    padding: 0 20px;
+  }
+  .logo img {
+    width: 130px;
+    height: 50px;
+  }
+  .navbar a {
+    font-size: 1.4rem;
+  }
+  .icons {
+    display: flex;
+    grid-column-gap: 10px;
+  }
+
+  .icons a {
+    font-size: 1.3rem;
+  }
+
+  /* Home */
+  .home {
+    width: 100%;
+    height: 300px;
+  }
+
+  .home h1 {
+    font-size: 2.4rem;
+  }
+
+  .home p {
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 1.6rem;
+    width: 180px;
+    height: 50px;
+  }
+  .about-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-text p {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+
+  .about img {
+    width: 50%;
+    height: 380px;
+  }
+  .menu h1 {
+    font-size: 3rem;
+  }
+  .reservation h1 {
+    font-size: 3rem;
+  }
+  .reserv-card {
+    width: 80%;
+  }
+
+  .reserv-card img {
+    width: 100%;
+  }
+  form select,
+  form input {
+    width: 80%;
+    height: 50px;
+    margin: 10px 10px;
+    font-size: 1.2rem;
+  }
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 3));
+  }
+  .carousel .card {
+    width: 100%;
+    height: 350px;
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .card h1 {
+    font-size: 2rem;
+    color: #171010;
+    font-weight: 900;
+  }
+
+  .card h2 {
+    margin-top: 5px;
+    font-size: 1.6rem;
+  }
+  .card button {
+    background-color: #171010;
+    color: #f2d72b;
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+  }
+
+  /*footer*/
+  footer img {
+    width: 120px;
+    height: 80px;
+  }
+
+  footer section {
+    column-gap: 5px;
+  }
+
+  footer h1 {
+    font-size: 1.4rem;
+  }
+  footer li {
+    font-size: 1rem;
+    margin-right: -4px;
+    padding: 5px 5px 0 5px;
+  }
+
+  .sociale a {
+    font-size: 25px;
+    width: 25px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .about-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-text p {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .about img {
+    width: 50%;
+    height: 400px;
+  }
+  .menu h1 {
+    font-size: 3.4rem;
+  }
+  .reservation h1 {
+    font-size: 3.4rem;
+  }
+  .reserv-card {
+    width: 80%;
+  }
+
+  .reserv-card img {
+    width: 100%;
+  }
+  form select,
+  form input {
+    width: 180px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 4));
+  }
+  /*footer*/
+  footer img {
+    width: 200px;
+    height: 100px;
+  }
+
+  footer section {
+    column-gap: 20px;
+  }
+
+  footer h1 {
+    font-size: 1.6rem;
+  }
+  footer li {
+    font-size: 1.2rem;
+  }
+
+  .sociale a {
+    font-size: 25px;
+    width: 25px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    color: #fff;
+    font-size: 1.8rem;
+  }
+
+  .about img {
+    width: 50%;
+    height: 450px;
+  }
+  .menu h1 {
+    font-size: 3.8rem;
+  }
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 4));
+  }
+  .reservation h1 {
+    font-size: 3.6rem;
+  }
+  .reserv-card {
+    width: 80%;
+  }
+
+  .reserv-card img {
+    width: 100%;
+  }
 }
